@@ -25,6 +25,8 @@
     box-shadow: 7px 13px 27px #000;
     border-radius: 2%;
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
 
 .avatar{
@@ -96,8 +98,8 @@
     justify-content: space-between;
     /* filter:alpha(opacity=70);
     -moz-opacity:.70;opacity:.70; */
-    background: #EEEE;
-    /* background: url('../img/Fondo.png'); */
+    /* backgro:und: #EEEE; */
+    background: linear-gradient(rgba(5,7,12,0.20),rgba(5,7,12,0.20)), url('../img/Fondo.png'); 
     font-family: sans-serif;
     height: 100vh;
 }
@@ -145,4 +147,32 @@
     color: #fff;
     font-size: 20px;
     height: 55px;
+}
+
+@media screen and (max-width:1366px) {
+    .carouselslide{
+        width: 650px;
+        height: 336px;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .carouselslide{
+        width: 544px;
+        height: 257px;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (max-width:769px) {
+    .carouselslide{
+        width: 400px;
+        height: 150px;
+        margin: 100px 0;
+    }
+    .container{
+        flex-direction: column;
+        justify-content: center;
+    }
 }
