@@ -165,14 +165,34 @@
     }
 }
 
-@media screen and (max-width:769px) {
+@media screen and (max-width:768px) {
     .carouselslide{
-        width: 400px;
-        height: 150px;
+        width: 450px;
+        height: 250px;
         margin: 100px 0;
     }
     .container{
         flex-direction: column;
         justify-content: center;
+    }
+    .main-container{
+        height: max-content;
+    }
+
+    .container-login{
+        margin: 0 100px 55px 100px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .carouselslide{
+        width: 320px;
+        height: 180px;
+        margin: 100px 0;
+    }
+
+    .container-login{
+        width: 320px;
+        height: 500px;
     }
 }
