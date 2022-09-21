@@ -5,7 +5,7 @@ Drive: https://drive.google.com/drive/folders/1_tK61y1VxqgkHTVlp2phYGldmVQnTmtQ?
 
 Trello: https://trello.com/invite/b/3NurbbAj/246c400adf8958c024ac02ba3bf49974/ciclo3
 
-Proyecto desarrollado en NetBeans JDK 11 y MariaDB.
+Proyecto desarrollado en NetBeans JDK 11c MariaDB y Apache TomCat.
 
 NOTA: La base de datos se encuentra en el drive. 
 Para ingresar a la pagina principal: user:admin,contra:amin.
