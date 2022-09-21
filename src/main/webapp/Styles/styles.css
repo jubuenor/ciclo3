@@ -1,0 +1,28 @@
+body{
+    background-color: #EEEEEE;
+}
+.navegar{
+    color:white;
+    font-size: large;
+    border-radius: 5px;
+    margin: auto 3px;
+}
+
+.navegar:hover{
+    color: whitesmoke;
+    transition: transform 0.3s;
+    transform: translateY(2px);
+    background-color: #393E46;
+}
+.active{
+    color: whitesmoke;
+    background-color: #393E46;
+}
+
+.card:hover{
+    transition: transform 0.3s;
+    transform: translateY(5px);
+}
+.back-nav{
+    background-color: #222831;
+}
