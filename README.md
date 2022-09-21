@@ -7,7 +7,8 @@ Trello: https://trello.com/invite/b/3NurbbAj/246c400adf8958c024ac02ba3bf49974/ci
 
 Proyecto desarrollado en NetBeans JDK 11 y MariaDB.
 
-NOTA: La base de datos se encuentra en el drive. user:admin,contra:user.
+NOTA: La base de datos se encuentra en el drive. 
+Para ingresar a la pagina principal: user:admin,contra:amin.
 
 
 Juan Andres Bueno Ramirez - Front end / Gestor de proyectos
