@@ -7,6 +7,9 @@ Trello: https://trello.com/invite/b/3NurbbAj/246c400adf8958c024ac02ba3bf49974/ci
 
 Proyecto desarrollado en NetBeans JDK 11 y MariaDB.
 
+NOTA: La base de datos se encuentra en el drive. user:admin,contra:user.
+
+
 Juan Andres Bueno Ramirez - Front end / Gestor de proyectos
 Juan Guillermo Ruiz Álvarez - Tester
 Edwin Garzón Romero - Base de datos
