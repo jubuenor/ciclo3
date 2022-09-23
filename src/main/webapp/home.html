@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="./Styles/styles.css">
+    <script src="./js/home.js"></script>
     <title>Home</title>
 </head>
 <body>
     <header>
         <nav class="fixed-top navbar navbar-expand-md back-nav">
-            <a class="navbar-brand ms-3" href="./home.html">
+            <a id="nav-home" class="btn navbar-brand ms-3">
                 <img class="rounded" src="./Public/Images/logo.jpg" alt="Logo" width="150px">
-              </a>
+            </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -23,29 +25,25 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav me-auto mb-2 ms-5">
                     <li class="nav-item">
-                        <a class="nav-link navegar" href="./home.html">Inicio</a>
+                        <a id="nav-home" class="btn nav-link navegar">Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle navegar" href="#" role="button" data-bs-toggle="dropdown">
                             Categorías
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Camisas</a></li>
-                            <li><a class="dropdown-item" href="#">Buzos</a></li>
-                            <li><a class="dropdown-item" href="#">Muebles</a></li>
-                            <li><a class="dropdown-item" href="#">Celulares</a></li>
+                        <ul id="dropdown-category" class="dropdown-menu">
                         </ul>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link navegar" href="./sobreNosotros.html">Sobre nosotros</a>
+                        <a id="nav-about" class="btn nav-link navegar">Sobre nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navegar" href="./contacto.html">Contacto</a>
+                        <a id="nav-contact" class="btn nav-link navegar">Contacto</a>
                     </li>
                 </ul>
                 <div class="input-group w-25 m-auto">
-                    <input class="form-control me-2" placeholder="Buscar">
-                    <button class="btn btn-outline-info me-2" type="submit"><span class="bi bi-search"> Buscar</span></button>
+                    <input id="input-search" class="form-control me-2" placeholder="Buscar">
+                    <button id="btn-search" class="btn btn-outline-info me-2" type="button"><span class="bi bi-search"> Buscar</span></button>
                 </div>
                 <div class="me-2">
                     <button class="btn btn-light"type="button">
@@ -55,8 +53,7 @@
                 <div class="me-5">
                     <li class="nav-item dropdown btn btn-secondary">
                         <a class="nav-link dropdown-toggle navegar" href="#" role="button" data-bs-toggle="dropdown">
-                            <span class="bi bi-person-circle"></span>
-                            Usuario
+                            <span id="user-email" class="bi bi-person-circle"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Mi perfil</a></li>
@@ -72,205 +69,13 @@
     
     <nav class="container" style="margin-top: 110px;" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Categoría</a></li>
-            <li class="breadcrumb-item" aria-current="page">Todo</li>
+            <li class="breadcrumb-item"><a id="nav-home" href="">Categoría</a></li>
+            <li class="breadcrumb-item" aria-current="page" id="cat-breadcrumb">Todo</li>
         </ol>
     </nav>
     
-    <div class="container d-flex flex-wrap justify-content-evenly" style="margin-top: 50px;">
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Camisas/C-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Camisa negra</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Camisas/C-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Camisa negra</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Camisas/C-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Camisa negra</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Camisas/C-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Camisa negra</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Buzos/B-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Buzo morado</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Buzos/B-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Buzo morado</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Buzos/B-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Buzo morado</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Buzos/B-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Buzo morado</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Muebles/M-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Mesa comedor</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Muebles/M-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Mesa comedor</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Muebles/M-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Mesa comedor</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Muebles/M-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Mesa comedor</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Celulares/C-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Celular Huawei</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Celulares/C-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Celular Huawei</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Celulares/C-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Celular Huawei</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn ">
-                <span class="bi bi-bag-plus"></span>
-            </button>
-            <img src="./Public/Images/Celulares/C-1.jpg" class="card-img-top" alt="Camisa">
-            <div class="card-body">
-              <h5 class="card-title">Celular Huawei</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h5 class="card-subtitle mb-2">$ 45.000</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
-            </div>
-        </div>
+    <div id="product-container" class="container d-flex flex-wrap justify-content-evenly" style="margin-top: 50px;">
+        
     </div>
 
     <footer>
@@ -279,28 +84,16 @@
                 <div class="col-xs-12 col-md-6 col-lg-3"> 
                     <img class="ms-3"  src="./Public/Images/footer.png" alt="Logo Footer" width="65%">
                 </div>
-                <div class="col-xs-12 col-md-6 col-lg-3"> 
+                <div id="footer-category"class="col-xs-12 col-md-6 col-lg-3"> 
                     <p class="h5 mb-3 text-light"> Categorías </p>
-                    <div class="mb-2 ms-2">
-                        <a class="text-secondary text-decoration-none" href="#">Camisas</a>
-                    </div>
-                    <div class="mb-2 ms-2">
-                        <a class="text-secondary text-decoration-none" href="#">Buzos</a>
-                    </div>
-                    <div class="mb-2 ms-2">
-                        <a class="text-secondary text-decoration-none" href="#">Muebles</a>
-                    </div>
-                    <div class="mb-2 ms-2">
-                        <a class="text-secondary text-decoration-none" href="#">Celulares</a>
-                    </div>
                 </div>
                 <div class="col-xs-12 col-md-6 col-lg-3"> 
                     <p class="h5 mb-3 text-light">Links</p>
                     <div class="mb-2 ms-2">
-                        <a class="text-secondary text-decoration-none" href="./sobreNosotros.html">Sobre Nosotros</a>
+                        <a id="nav-about" class="btn text-secondary text-decoration-none">Sobre Nosotros</a>
                     </div>
                     <div class="mb-2 ms-2">
-                        <a class="text-secondary text-decoration-none" href="./contacto.html">Contacto</a>
+                        <a id="nav-contact" class="btn text-secondary text-decoration-none">Contacto</a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6 col-lg-3"> 

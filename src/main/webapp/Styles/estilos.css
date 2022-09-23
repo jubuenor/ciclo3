@@ -125,9 +125,7 @@ body {
 }
 
 .main-tittle{
-    display: flex;
-    justify-content: center;
-    margin: 0%;
+    margin: auto;
     padding: 0 0 20px;
     font-size: 58px;
     color: #000;

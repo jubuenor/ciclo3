@@ -25,7 +25,6 @@ public class ServletUserLogin extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String result = usuario.login(email , password);
-        System.out.println("resutlado:"+result);
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         out.println(result);
