@@ -14,7 +14,7 @@
 <body>
     <header>
         <nav class="fixed-top navbar navbar-expand-md back-nav">
-            <a id="nav-home" class="btn navbar-brand ms-3">
+            <a id="nav-img-home" class="btn navbar-brand ms-3">
                 <img class="rounded" src="./Public/Images/logo.jpg" alt="Logo" width="150px">
             </a>
             
@@ -46,7 +46,7 @@
                     <button id="btn-search" class="btn btn-outline-info me-2" type="button"><span class="bi bi-search"> Buscar</span></button>
                 </div>
                 <div class="me-2">
-                    <button class="btn btn-light"type="button">
+                    <button id="nav-carrito" class="btn btn-light" type="button">
                         <span class="bi bi-basket"></span>
                     </button>
                 </div>
@@ -56,7 +56,7 @@
                             <span id="user-email" class="bi bi-person-circle"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+                            <li><a id="nav-profile" class="btn dropdown-item">Mi perfil</a></li>
                             <li><a class="dropdown-item" href="/juneled">Salir</a></li>
                         </ul>
                     </li>
@@ -78,6 +78,18 @@
         
     </div>
 
+    <div class="modal fade" id="add-venta-msg" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-success">!Añadido con éxito!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container-fluid ">
             <div class="row p-5 back-nav">
@@ -90,10 +102,10 @@
                 <div class="col-xs-12 col-md-6 col-lg-3"> 
                     <p class="h5 mb-3 text-light">Links</p>
                     <div class="mb-2 ms-2">
-                        <a id="nav-about" class="btn text-secondary text-decoration-none">Sobre Nosotros</a>
+                        <a id="foot-about" class="btn text-secondary text-decoration-none">Sobre Nosotros</a>
                     </div>
                     <div class="mb-2 ms-2">
-                        <a id="nav-contact" class="btn text-secondary text-decoration-none">Contacto</a>
+                        <a id="foot-contact" class="btn text-secondary text-decoration-none">Contacto</a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6 col-lg-3"> 

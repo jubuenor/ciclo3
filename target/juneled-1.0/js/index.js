@@ -11,11 +11,12 @@ $(document).ready(()=>{
         let apellido=$("#reg-apellido").val();
         let email= $("#reg-email").val();
         let contrasena= $("#reg-contrasena").val();
+        let saldo= $("#reg-saldo").val();
         event.preventDefault();
         if(nombre.length<=2||apellido.length<=2||email.length<=2||contrasena.length<=2){
         $("#reg-err").removeClass("d-none")
         }else {
-            registerUser(nombre,apellido,email,contrasena);
+            registerUser(nombre,apellido,email,contrasena,saldo);
         }
         
     });
@@ -44,7 +45,7 @@ function checkUser(){
     });
 }
 
-function registerUser(nombre,apellido,email,contrasena){
+function registerUser(nombre,apellido,email,contrasena,saldo){
 
     $.ajax({
         type:"POST",
@@ -55,12 +56,12 @@ function registerUser(nombre,apellido,email,contrasena){
             apellido:apellido,
             email:email,
             contrasena:contrasena,
-            saldo:"50000.0"
+            saldo:saldo
         }),
         error:()=>{
             console.log("error");
         },
-        complete:()=>{
+        success:()=>{
             $("#reg-nombre").val("");
             $("#reg-apellido").val("");
             $("#reg-email").val("");

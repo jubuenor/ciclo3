@@ -4,8 +4,6 @@
  */
 package beans;
 
-import java.util.Date;
-
 /**
  *
  * @author Juancho_o
@@ -17,9 +15,9 @@ public class Ventas {
     private int id_producto;
     private int cantidad;
     private double valor_total;
-    private Date fecha;
+    private String fecha;
 
-    public Ventas(int id_venta, int id_usuario, int id_producto, int cantidad, double valor_total, Date fecha) {
+    public Ventas(int id_venta, int id_usuario, int id_producto, int cantidad, double valor_total, String fecha) {
         this.id_venta = id_venta;
         this.id_usuario = id_usuario;
         this.id_producto = id_producto;
@@ -68,11 +66,11 @@ public class Ventas {
         this.valor_total = valor_total;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
     

@@ -7,9 +7,14 @@ $(document).ready(() => {
         let input = $("#input-search").val();
         if (input != "") { searchProductos(input); }
     });
-    $("#nav-home").click(() => { document.location.href = "home.html?email=" + email });
+    $("#nav-img-home").click(() => { document.location.href = "home.html?email=" + email });
     $("#nav-about").click(() => { document.location.href = "sobreNosotros.html?email=" + email });
     $("#nav-contact").click(() => { document.location.href = "contacto.html?email=" + email });
+    $("#nav-home").click(() => { document.location.href = "home.html?email=" + email });
+    $("#nav-profile").click(() => { document.location.href = "perfil.html?email=" + email });
+    $("#foot-about").click(() => { document.location.href = "sobreNosotros.html?email=" + email });
+    $("#foot-contact").click(() => { document.location.href = "contacto.html?email=" + email });
+    $("#nav-carrito").click(() => { document.location.href = "carrito.html?email=" + email });
 });
 function getCategorias() {
     $.ajax({

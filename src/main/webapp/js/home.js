@@ -1,13 +1,14 @@
 let email = new URL(location.href).searchParams.get('email');
 let showC = new URL(location.href).searchParams.get('showCategory');
 let showP = new URL(location.href).searchParams.get('showProducts');
-
+let usuario;
 let productos;
 let categorias;
 const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0, minimumFractionDigits: 0 });
 
 getProductos();
 getCategorias();
+getUsuario(email);
 
 $(document).ready(() => {
     $("#user-email").html("  " + email.split('@')[0].toUpperCase());
@@ -24,11 +25,31 @@ $(document).ready(() => {
         let input = $("#input-search").val();
         if (input != "") { searchProductos(input); }
     });
-    $("#nav-home").click(() => { document.location.href = "home.html?email=" + email });
+    $("#nav-img-home").click(() => { document.location.href = "home.html?email=" + email });
     $("#nav-about").click(() => { document.location.href = "sobreNosotros.html?email=" + email });
     $("#nav-contact").click(() => { document.location.href = "contacto.html?email=" + email });
+    $("#nav-home").click(() => { document.location.href = "home.html?email=" + email });
+    $("#nav-profile").click(() => { document.location.href = "perfil.html?email=" + email });
+    $("#foot-about").click(() => { document.location.href = "sobreNosotros.html?email=" + email });
+    $("#foot-contact").click(() => { document.location.href = "contacto.html?email=" + email });
+    $("#nav-carrito").click(() => { document.location.href = "carrito.html?email=" + email });
 
 });
+
+function getUsuario(email){
+    $.ajax({
+        type:"GET",
+        dataType:"html",
+        url:"./ServletgetUser",
+        data: $.param({
+            email:email,
+        }),
+        success:(result)=>{
+            let res=JSON.parse(result);
+            usuario=res;
+        }
+    });
+}
 
 function searchProductos(input) {
     $("#input-search").val("");
@@ -92,10 +113,10 @@ function listProductos(productos) {
     $.each(productos, (index, product) => {
         contenido += `
         <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn">
+            <button class="position-absolute btn" onClick="addVenta(${product.id_producto})">
                 <span class="bi bi-bag-plus"></span>
             </button>
-            <img src="./Public/Images/Productos/${product.id_producto}.jpg" class="card-img-top" alt="Camisa" width="254" height="254">
+            <img src="./Public/Images/Productos/${product.id_producto}.jpg" class="card-img-top" alt="Producto" width="254" height="254">
             <div class="card-body">
               <h5 class="card-title">${product.nombre_producto}</h5>
               <p class="card-text">${product.descripcion}</p>
@@ -105,4 +126,30 @@ function listProductos(productos) {
         </div>`;
     });
     $("#product-container").html(contenido);
+}
+
+function addVenta(id_producto){
+    console.log(id_producto);
+    let fecha = new Date();
+
+    $.ajax({
+        type:"POST",
+        dataType:"html",
+        url:"./ServletaddVenta",
+        data: $.param({
+            id_usuario:usuario.id_usuario,
+            id_producto:id_producto,
+            cantidad:"1",
+            valor_total:`${productos.filter((product)=>product.id_producto==id_producto)[0].valor}`,
+            fecha: `${fecha.toUTCString()}`,
+        }),
+        error:()=>{
+            console.log("error");
+        },
+        success:()=>{
+            var myModal = document.getElementById('add-venta-msg');
+            var modal1 = bootstrap.Modal.getOrCreateInstance(myModal);
+            modal1.show();
+        }
+    });
 }

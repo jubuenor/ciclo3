@@ -11,7 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="./Styles/styles.css">
     <script src="./js/con_ab.js"></script>
-    <title>Sobre Nosotros</title>
+    <script src="./js/carrito.js"></script>
+    <title>Carrito de compras</title>
 </head>
 
 <body>
@@ -51,7 +52,7 @@
                             Buscar</span></button>
                 </div>
                 <div class="me-2">
-                    <button  id="nav-carrito" class="btn btn-light" type="button">
+                    <button id="nav-carrito" class="btn btn-light" type="button">
                         <span class="bi bi-basket"></span>
                     </button>
                 </div>
@@ -73,37 +74,30 @@
     </header>
     <div style="min-height: 75vh;">
         <div class="container bg-body p-5 rounded-5 mb-5 shadow-sm" style="margin-top: 110px;">
-            <h1>Contacto</h1>
+            <h1>Carrito de compras</h1>
             <br>
-            <p>Contacta a nuestro equipo de desarrollo!</p>
-            <div class="row p5">
-                <div class="col-xs-1 col-md-6 col-lg-6">
-                    <div class="container">
-                        <p class="mb-4"><span class="back-nav p-1 rounded text-white">Ju</span>an Andres Bueno Ramirez -
-                            jubuenor@unal.edu.co <a class="btn btn-light ms-2" href="mailto:jubuenor@unal.edu.co"> <span
-                                    class="bi bi-envelope"></span></a></p>
-                        <p class="mb-4"><span class="back-nav p-1 rounded text-white">Ju</span>an Guillermo Ruiz Álvarez
-                            - ruizalvarez2819@gmail.com <a class="btn btn-light ms-2"
-                                href="mailto:ruizalvarez2819@gmail.com"> <span class="bi bi-envelope"></span></a></p>
-                        <p class="mb-4"><span class="back-nav p-1 rounded text-white">Le</span>idy Johana Rodríguez
-                            Álvarez - leidyrodriguez1015@gmail.com <a class="btn btn-light ms-2"
-                                href="mailto:leidyrodriguez1015@gmail.com"> <span class="bi bi-envelope"></span></a></p>
-                        <p class="mb-4"><span class="back-nav p-1 rounded text-white">Ne</span>stor Fabian Tafur
-                            Gonzales - teifur1992@hotmail.com <a class="btn btn-light ms-2"
-                                href="mailto:teifur1992@hotmail.com"> <span class="bi bi-envelope"></span></a></p>
-                        <p class="mb-4"><span class="back-nav p-1 rounded text-white">Ed</span>win Garzón Romero -
-                            edwin9970@gmail.com<a class="btn btn-light ms-2" href="mailto:edwin9970@gmail.com"> <span
-                                    class="bi bi-envelope"></span></a> </p>
+            <p>Saldo actual: <span id="saldo_act" class="text-info h4"></span></p>
+            <p id="saldo-err" class="text-danger d-none" >Saldo insuficiente</p>
+            <ul id="ventas-list" class="list-group">
 
-                    </div>
-
-                </div>
-                <div class="col-xs-1 col-md-6 col-lg-6">
-                    <img class="rounded" src="./Public/Images/contacto.jpg" alt="Venta garaje" width="75%">
+            </ul>
+            <div class="d-flex justify-content-end">
+                <h5 class="card-title p-3">Valor total</h5>
+                <h5 id="valor_total" class="card-title text-success p-3"></h5>
+                <button id="btn_comprar" type="button" class="btn btn-success">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="msg-venta" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-success">!Compra exitosa!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
             </div>
         </div>
-
     </div>
     <footer>
         <div class="container-fluid ">

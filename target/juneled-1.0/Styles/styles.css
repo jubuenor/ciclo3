@@ -22,6 +22,11 @@ body{
     background-color: #393E46;
 }
 
+.row li:hover{
+    transition: transform 0.3s;
+    transform: translateY(5px);
+}
+
 .card:hover{
     transition: transform 0.3s;
     transform: translateY(5px);
