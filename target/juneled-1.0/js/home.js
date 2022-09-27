@@ -1,6 +1,4 @@
 let email = new URL(location.href).searchParams.get('email');
-let showC = new URL(location.href).searchParams.get('showCategory');
-let showP = new URL(location.href).searchParams.get('showProducts');
 let usuario;
 let productos;
 let categorias;
@@ -11,6 +9,9 @@ getCategorias();
 getUsuario(email);
 
 $(document).ready(() => {
+    
+    let showC = new URL(location.href).searchParams.get('showCategory');
+    let showP = new URL(location.href).searchParams.get('showProducts');
     $("#user-email").html("  " + email.split('@')[0].toUpperCase());
     if (showC) {
         let id = new URL(location.href).searchParams.get('id');
@@ -113,7 +114,7 @@ function listProductos(productos) {
     $.each(productos, (index, product) => {
         contenido += `
         <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-            <button class="position-absolute btn" onClick="addVenta(${product.id_producto})">
+            <button class="position-absolute btn" onClick="addVenta(${product.id_producto},false)">
                 <span class="bi bi-bag-plus"></span>
             </button>
             <img src="./Public/Images/Productos/${product.id_producto}.jpg" class="card-img-top" alt="Producto" width="254" height="254">
@@ -121,14 +122,14 @@ function listProductos(productos) {
               <h5 class="card-title">${product.nombre_producto}</h5>
               <p class="card-text">${product.descripcion}</p>
               <h5 class="card-subtitle mb-2">${currency.format(product.valor)}</h5>
-              <a href="#" class="btn btn-success">Comprar</a>
+              <a onClick="addVenta(${product.id_producto},true)" class="btn btn-success">Comprar</a>
             </div>
         </div>`;
     });
     $("#product-container").html(contenido);
 }
 
-function addVenta(id_producto){
+function addVenta(id_producto,carrito){
     console.log(id_producto);
     let fecha = new Date();
 
@@ -147,9 +148,12 @@ function addVenta(id_producto){
             console.log("error");
         },
         success:()=>{
-            var myModal = document.getElementById('add-venta-msg');
-            var modal1 = bootstrap.Modal.getOrCreateInstance(myModal);
-            modal1.show();
+            if(!carrito){
+                var myModal = document.getElementById('add-venta-msg');
+                var modal1 = bootstrap.Modal.getOrCreateInstance(myModal);
+                modal1.show();
+            }else{document.location.href = "carrito.html?email=" + email;}
+            
         }
     });
 }
