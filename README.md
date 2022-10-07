@@ -14,5 +14,4 @@ Para ingresar a la pagina principal: user:admin,contra:amin.
 Juan Andres Bueno Ramirez - Front end / Gestor de proyectos
 Juan Guillermo Ruiz Álvarez - Tester
 Edwin Garzón Romero - Base de datos
-Leidy Johana Rodríguez Álvarez - Backend
 Nestor Fabian Tafur Gonzales - Gestor de base de datos
